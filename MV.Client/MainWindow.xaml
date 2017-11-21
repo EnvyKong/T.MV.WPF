@@ -1,0 +1,66 @@
+﻿<Window x:Class="MV.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MV.Client"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="0.8*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="打开" Command="{Binding OpenXmlFileCommand}">
+            </MenuItem>
+            <MenuItem Header="检查" Command="{Binding ReviewCommand}">
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="0.6*"/>
+            </Grid.ColumnDefinitions>
+            
+            <GridSplitter Grid.Column="1" Width="4" HorizontalAlignment="Center"/>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70*" MinHeight="10"/>
+                    <RowDefinition Height="4"/>
+                    <RowDefinition Height="304*" MinHeight="10"/>
+                </Grid.RowDefinitions>
+                <GroupBox Header="对象比较" >
+                    
+                </GroupBox>
+                <GridSplitter  Grid.Row="1" Height="4" HorizontalAlignment="Stretch"/>
+                <Grid Grid.Row="2" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <GroupBox Header="模型数据" Grid.Column="0" >
+                       
+                    </GroupBox>
+
+                    <GridSplitter  Grid.Column="1" Width="4" HorizontalAlignment="Center"/>
+                    <GroupBox Header="标准数据" Grid.Column="2">
+                        
+                    </GroupBox>
+                </Grid>
+            </Grid>
+        </Grid>
+        <GroupBox Header="消息输出" Grid.Row="3" Grid.ColumnSpan="5">
+            <TextBox Name="outputtext" VerticalScrollBarVisibility="Auto"></TextBox>
+        </GroupBox>
+
+        <GridSplitter Grid.Row="2" Grid.Column="0" Height="5" HorizontalAlignment="Stretch"/>
+        <StatusBar Grid.Row="4" Grid.ColumnSpan="5" Height="20"/>
+    </Grid>
+</Window>
